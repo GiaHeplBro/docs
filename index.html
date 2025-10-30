@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -25,10 +26,10 @@
 
     /* Style ghi đè game Unity giữ nguyên */
     #unity-container {
-      /* position: relative !important; */ 
-      left: 21% !important; 
+      /* position: relative !important; */
+      left: 21% !important;
       top: 851px !important;
-      transform: none !important; 
+      transform: none !important;
     }
 
     /* ----- 2. CSS cho "Tiêu đề" (Tiêu đề chính của bài) ----- */
@@ -49,14 +50,16 @@
       font-size: 19px;
       line-height: 1.618;
       color: #222;
-      
+
       /* Thêm padding và background cho khu vực bao bọc */
-      max-width: 960px; /* Cùng chiều rộng với game */
-      margin: 20px auto; /* Căn giữa và tạo khoảng cách */
+      max-width: 960px;
+      /* Cùng chiều rộng với game */
+      margin: 20px auto;
+      /* Căn giữa và tạo khoảng cách */
       padding: 20px;
       background-color: #ffffff;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     /* ----- 4. CSS cho "Chương" (Tiêu đề của mục lớn) ----- */
@@ -75,25 +78,26 @@
     /* ----- 5. CSS cho đoạn văn bản ----- */
     .entry p {
       max-width: 600px;
-      margin: 0 auto 1em; /* Căn giữa khối văn bản và thêm lề dưới */
+      margin: 0 auto 1em;
+      /* Căn giữa khối văn bản và thêm lề dưới */
     }
-    
+
     /* CSS cho ảnh bên trong entry */
     .entry img {
       max-width: 100%;
       height: auto;
       border-radius: 4px;
       margin: 1em auto;
-      display: block; /* Giúp căn giữa ảnh */
+      display: block;
+      /* Giúp căn giữa ảnh */
     }
 
     /* ----- 6. CSS cho đoạn văn căn đều ----- */
     .entry .align-justify {
       text-align: justify;
     }
-    
   </style>
-  
+
   <!-- Tải Tailwind CSS (cho Chatbox) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -101,15 +105,17 @@
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  
+
 </head>
+
 <body>
 
   <!-- === (2) BẮT ĐẦU 7 PHẦN NỘI DUNG CỦA BẠN === -->
 
   <!-- === PHẦN 1: ẢNH TIÊU ĐỀ === -->
   <!-- Đặt tiêu đề riêng ở ngoài -->
-  <h1 class="article-title">Tiêu đề bài thuyết trình của bạn (Phần 1)</h1>
+  <h1 class="article-title">Chương 2: Đảng lãnh đạo hai cuộc kháng chiến, hoàn thành giải phóng dân tộc, thống nhất đất
+    nước (1945 - 1975)</h1>
   <div style="max-width: 960px; margin: auto; padding: 0 20px;">
     <img src="https://vnp.1cdn.vn/2025/04/10/header-2.png" alt="Ảnh tiêu đề" style="width: 100%; border-radius: 8px;">
   </div>
@@ -136,38 +142,272 @@
   <div class="entry">
 
     <!-- === PHẦN 3: VĂN NÓI === -->
-    <div>
-      <h2>Phần 3: Nội dung văn bản</h2>
-      <p class="align-justify">Đây là nơi bạn viết nội dung văn bản đầu tiên. Bạn có thể giải thích về bối cảnh lịch sử, lý do của cuộc kháng chiến, v.v. Văn bản này sẽ nằm ngay dưới game. Đoạn văn này được căn lề đều (justify) nhờ class 'align-justify'.</p>
-      <p>Đoạn văn này không có class 'align-justify' nên nó sẽ được căn lề trái (mặc định của .entry p).</p>
+    <div style="margin-top: 340px;">
+      <h2>I. Lãnh đạo xây dựng, bảo vệ chính quyền, kháng chiến chống Pháp (1945 - 1954)</h2>
+      <p class="align-justify">a) Tình hình Việt Nam sau Cách mạng Tháng Tám 1945</p>
+      <p>Sau ngày tuyên bố độc lập, chính quyền cách mạng non trẻ của Việt Nam đứng trước tình thế "ngàn cân treo sợi
+        tóc". Về thuận lợi, Việt Nam đã trở thành một quốc gia độc lập, Đảng Cộng sản trở thành Đảng cầm quyền, và nhân
+        dân tin tưởng vào chế độ mới do Chủ tịch Hồ Chí Minh đứng đầu. Tuy nhiên, khó khăn là vô cùng lớn, bao gồm "thù
+        trong, giặc ngoài". Nạn đói do hậu quả từ cuối 1944 - đầu 1945 đã làm 2 triệu người chết , 95% dân số thất học
+        (nạn dốt) , và nền tài chính kiệt quệ, kho bạc trống rỗng. Về giặc ngoại xâm, Pháp nổ súng gây hấn ở Sài Gòn
+        ngay ngày 2/9/1945 và bắt đầu cuộc xâm lược lần thứ hai vào ngày 23/9/1945 với sự bảo trợ của quân Anh. Ở miền
+        Bắc, hơn 20 vạn quân Tưởng Giới Thạch kéo vào từ vĩ tuyến 16 trở ra dưới danh nghĩa giải giáp quân Nhật, mang
+        theo các lực lượng tay sai như Việt Quốc, Việt Cách , trong khi 6 vạn quân Nhật vẫn chưa được giải giáp.</p>
+
+
+      <p class="align-justify">b) Chủ trương "Kháng chiến kiến quốc" và quá trình thực hiện</p>
+      <p> Ngay sau khi độc lập, Đảng lãnh đạo toàn dân thực hiện song song hai nhiệm vụ. Để "Diệt giặc đói", Chủ tịch Hồ
+        Chí Minh phát động tăng gia sản xuất, lập "hũ gạo tiết kiệm" và tổ chức "Tuần lễ vàng" , giúp nạn đói cơ bản
+        được đẩy lùi vào đầu năm 1946. Để "Diệt giặc dốt", Chính phủ phát động phong trào "Bình dân học vụ" , kết quả là
+        đến cuối 1946, hơn 2,5 triệu người đã biết đọc, viết chữ quốc ngữ. Về nhiệm vụ "Diệt giặc ngoại xâm" và củng cố
+        chính quyền, Ban Chấp hành Trung ương Đảng ra Chỉ thị "Kháng chiến kiến quốc" (25/11/1945), xác định kẻ thù
+        chính là thực dân Pháp xâm lược và đề ra khẩu hiệu "Dân tộc trên hết, Tổ quốc trên hết". Ngày 6/1/1946, Tổng
+        tuyển cử đầu tiên được tổ chức, bầu ra 333 đại biểu Quốc hội. Quốc hội sau đó đã lập Chính phủ chính thức do Hồ
+        Chí Minh làm Chủ tịch (2/3/1946) và thông qua bản Hiến pháp đầu tiên (9/11/1946). </p>
+
+      <p class="align-justify">c) Sách lược hòa hoãn, bảo vệ lực lượng (1945 - 1946)</p>
+      <p>Để tránh đối đầu cùng lúc với nhiều kẻ thù, ta chủ trương "Hòa với Tưởng" (trước tháng 3/1946) ở miền Bắc để
+        tập trung chống Pháp ở Nam Bộ. Ta đã chấp nhận nhân nhượng cho Tưởng nhiều quyền lợi kinh tế và 70 ghế Quốc hội
+        không qua bầu cử cho Việt Quốc, Việt Cách. Tuy nhiên, khi Pháp và Tưởng ký Hiệp ước Trùng Khánh (28/2/1946) cho
+        phép Pháp thay Tưởng ở miền Bắc, Đảng đã quyết định "dàn hòa với Pháp" để đuổi 20 vạn quân Tưởng về nước. Hiệp
+        định Sơ bộ (6/3/1946) được ký kết, trong đó Pháp công nhận Việt Nam là "một quốc gia tự do" và ta đồng ý cho
+        15.000 quân Pháp ra miền Bắc thay thế Tưởng. Sau khi Hội nghị Phôngtennơblô thất bại, Chủ tịch Hồ Chí Minh ký
+        Tạm ước (14/9/1946), tiếp tục nhân nhượng cho Pháp về kinh tế, văn hóa để kéo dài thời gian hòa bình. Trong thời
+        gian này, ta tích cực di chuyển cơ quan, máy móc lên căn cứ địa (ATK) và chuẩn bị "tiêu thổ kháng chiến". </p>
+
     </div>
 
     <!-- === PHẦN 4: ẢNH THỨ HAI === -->
     <div>
-      <img src="https://placehold.co/960x500/b91c1c/white?text=Ảnh+Minh+Họa+Phần+4" alt="Ảnh minh họa 2">
+      <img
+        src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2FScreenshot%202025-10-31%20054119.png?alt=media&token=026f0e1c-607f-41d8-95da-61c9ac1c21d8"
+        alt="Ảnh minh họa 2">
     </div>
 
     <!-- === PHẦN 5: VĂN NÓI === -->
     <div>
-      <h2>Phần 5: Nội dung văn bản tiếp theo</h2>
-      <p class="align-justify">Nội dung văn bản tiếp theo, tập trung vào tư tưởng Hồ Chí Minh về phòng chống tham nhũng, hoặc về đường lối kháng chiến...</p>
+      <h2>2. Đường lối kháng chiến toàn quốc và quá trình tổ chức (1946 - 1950)</h2>
+      <p class="align-justify">a) Kháng chiến toàn quốc bùng nổ (12/1946)</p>
+      <p>Do Pháp liên tục bội ước, khiêu khích ở nhiều nơi (Hải Phòng, Lạng Sơn, Hà Nội) và gửi tối hậu thư (18/12/1946)
+        đòi ta giải tán lực lượng tự vệ, chiến tranh là không thể tránh khỏi. Ngày 12/12/1946, Trung ương Đảng ra Chỉ
+        thị "Toàn dân kháng chiến". Tối 19/12/1946, Chủ tịch Hồ Chí Minh ra Lời kêu gọi toàn quốc kháng chiến, vang lên
+        câu nói bất hủ: "Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước, nhất định không chịu làm nô
+        lệ!". Vào 20 giờ ngày 19/12/1946, cuộc kháng chiến toàn quốc chính thức bùng nổ, mở đầu bằng các trận chiến đấu
+        60 ngày đêm tại Hà Nội. </p>
+
+      <p class="align-justify"> b) Nội dung đường lối kháng chiến </p>
+
+      <p>Đường lối kháng chiến của Đảng, được thể hiện trong Lời kêu gọi của Hồ Chí Minh và tác phẩm "Kháng chiến nhất
+        định thắng lợi" của Trường Chinh, bao gồm các nội dung cốt lõi. Đó là: Kháng chiến toàn dân, với "mỗi người dân
+        là một chiến sĩ, mỗi làng xã là một pháo đài"; Kháng chiến toàn diện, tức là đánh địch trên mọi mặt trận từ quân
+        sự, chính trị đến kinh tế, văn hóa, ngoại giao; Kháng chiến lâu dài (trường kỳ), nhằm lấy thời gian để chuyển
+        hóa lực lượng từ yếu thành mạnh ; và Dựa vào sức mình là chính, lấy nguồn nội lực của dân tộc làm chủ yếu.</p>
+
+      <p class="align-justify">c) Quá trình tổ chức chiến đấu (1947 - 1950)</p>
+
+      <p>Mở đầu là Chiến dịch Việt Bắc (Thu - Đông 1947), khi Pháp tấn công quy mô lớn lên căn cứ địa hòng "đánh nhanh,
+        thắng nhanh". Ngày 15/10/1947, Đảng ra Chỉ thị "Phải phá tan cuộc tấn công mùa đông của giặc Pháp". Sau 75 ngày
+        đêm chiến đấu, ta đã đập tan cuộc hành quân của địch, bảo toàn cơ quan đầu não và làm thất bại kế hoạch "đánh
+        nhanh, thắng nhanh" của chúng. Giai đoạn 1948 - 1950, Đảng phát động phong trào "Thi đua ái quốc" (11/6/1948) để
+        phát triển lực lượng. Về ngoại giao, ta được Trung Quốc (18/1/1950), Liên Xô (30/1/1950) và các nước XHCN công
+        nhận, đặt quan hệ. Tiếp đó, Chiến dịch Biên giới (Thu - Đông 1950) được ta chủ trương mở ra nhằm tiêu diệt sinh
+        lực địch, khai thông biên giới Việt-Trung và mở rộng căn cứ địa. Chiến dịch này do Chủ tịch Hồ Chí Minh trực
+        tiếp ra mặt trận chỉ đạo và đã giành toàn thắng (17/10/1950), giải phóng một vùng biên giới rộng lớn, tạo cục
+        diện mới và giúp ta giành quyền chủ động chiến lược trên chiến trường chính Bắc Bộ.</p>
+
     </div>
+
+    <div>
+      <img
+        src="https://file3.qdnd.vn/data/images/0/2022/12/06/duyhoan_kh/bac%20ho%20voi%20nhan%20dan.jpg?dpi=150&quality=100&w=870"
+        alt="Ảnh minh họa 3">
+    </div>
+
+    <div>
+      <h2>3. Đẩy mạnh kháng chiến đến thắng lợi (1951 - 1954)</h2>
+      <p class="align-justify">a) Đại hội đại biểu toàn quốc lần thứ II của Đảng (2/1951)</p>
+      <p>Đại hội được tổ chức tại Chiêm Hóa, Tuyên Quang, với 158 đại biểu chính thức. Đại hội đưa ra hai quyết định
+        quan trọng. Thứ nhất, Đảng ra hoạt động công khai, lấy tên là Đảng Lao động Việt Nam; đồng thời chủ trương thành
+        lập đảng riêng ở Lào và Campuchia. Thứ hai, Đại hội thông qua Chính cương Đảng Lao động Việt Nam. Chính cương
+        xác định nhiệm vụ chính là "đánh đuổi bọn đế quốc xâm lược, giành độc lập và thống nhất thật sự", "hoàn thành
+        công cuộc giải phóng dân tộc". Lực lượng cách mạng (động lực) bao gồm công nhân, nông dân, tiểu tư sản, tư sản
+        dân tộc, và các thân sĩ yêu nước , dưới sự lãnh đạo của giai cấp công nhân. Đại hội đã bầu đồng chí Hồ Chí Minh
+        làm Chủ tịch Đảng và đồng chí Trường Chinh được bầu lại làm Tổng Bí thư. </p>
+
+      <p class="align-justify"> b) Phát triển kháng chiến (1951 - 1953) </p>
+
+      <p>Về quân sự, ta liên tiếp mở các chiến dịch lớn như Hòa Bình (1951), Tây Bắc (1952), và Thượng Lào (1953). Về
+        kinh tế, Đảng quyết định tiến tới cải cách ruộng đất (Hội nghị TƯ 4, 1/1953) và thông qua Cương lĩnh ruộng đất
+        (Hội nghị TƯ 5, 11/1953). Ngày 19/12/1953, Quốc hội thông qua Luật cải cách ruộng đất, thực hiện mục tiêu "người
+        cày có ruộng". Tuy nhiên, quá trình thực hiện đã mắc phải các khuyết điểm nghiêm trọng như độc đoán, chủ quan,
+        giáo điều, xử lý oan sai. Những sai lầm này sau đó đã được Hội nghị TƯ 10 (10/1956) phân tích và đề ra biện pháp
+        khắc phục.</p>
+
+      <p class="align-justify">c) Cuộc tiến công Đông Xuân 1953-1954 và Chiến dịch Điện Biên Phủ</p>
+
+      <p>Tháng 7/1953, Pháp (với sự can thiệp của Mỹ) đề ra kế hoạch Nava hòng "chuyển bại thành thắng" trong 18 tháng.
+        Nava tập trung quân, xây dựng Điện Biên Phủ thành "một pháo đài khổng lồ không thể công phá". Trước tình hình
+        đó, tháng 9/1953, Bộ Chính trị quyết định mở cuộc tiến công chiến lược Đông Xuân 1953 - 1954, buộc địch phải
+        phân tán lực lượng để đối phó. Ta đồng loạt tấn công trên nhiều hướng (Lai Châu, Trung Lào, Hạ Lào, Tây Nguyên,
+        Thượng Lào), khiến kế hoạch tập trung quân của Nava bị phá sản. Ngày 6/12/1953, Bộ Chính trị quyết định mở Chiến
+        dịch Điện Biên Phủ , với phương châm chiến lược được thay đổi từ "đánh nhanh, thắng nhanh" sang "đánh chắc, tiến
+        chắc". Chiến dịch mở màn ngày 13/3/1954 và kết thúc thắng lợi vào 17h30 ngày 7/5/1954, bắt sống tướng Đờ Cátơri.
+        Chiến thắng này "đi vào lịch sử thế giới như một chiến công hiển hách", báo hiệu sự sụp đổ của chủ nghĩa thực
+        dân. Thắng lợi này đã tác động trực tiếp đến Hội nghị Giơnevơ, khai mạc ngày 8/5/1954. Ngày 21/7/1954, Hiệp định
+        được ký kết, trong đó các nước cam kết tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt
+        Nam, Lào, Campuchia.</p>
+
+    </div>
+
+    <div>
+      <img src="https://vnp.1cdn.vn/2025/04/10/footer-2.png" alt="Ảnh minh họa 3">
+    </div>
+
+    <h1 class="article-title">II. Lãnh đạo xây dựng CNXH ở Miền Bắc và kháng chiến chống Mỹ (1954 - 1975)</h1>
+
+    <div>
+      <h2>1. Sự lãnh đạo của Đảng đối với cách mạng hai miền (1954 - 1965)</h2>
+      <p class="align-justify">a) Giai đoạn 1954 - 1960: Khôi phục kinh tế ở MB, chuyển thế ở MN</p>
+      <p>Sau Hiệp định Giơnevơ, đất nước bị chia cắt. Miền Bắc hoàn toàn giải phóng, trong khi Miền Nam trở thành thuộc
+        địa kiểu mới của Mỹ , nơi Mỹ dựng lên chính quyền Ngô Đình Diệm. Ở Miền Bắc, ta tiếp quản Hà Nội (10/10/1954) và
+        Hải Phòng (16/5/1955). Miền Bắc hoàn thành Cải cách ruộng đất (7/1956), dù mắc phải sai lầm nghiêm trọng đã được
+        Hội nghị TƯ 10 (9/1956) kiểm điểm và sửa chữa , sau đó thực hiện Kế hoạch 3 năm cải tạo XHCN (1958-1960). Ở Miền
+        Nam, Mỹ-Diệm thi hành chính sách "tố cộng, diệt cộng", khủng bố dã man bằng Luật 10/59. Trước tình hình đó, Hội
+        nghị TƯ 15 (1/1959) đã xác định con đường của cách mạng miền Nam là sử dụng bạo lực cách mạng, kết hợp đấu tranh
+        chính trị và vũ trang. Điều này dẫn đến Phong trào Đồng khởi (bùng nổ ở Bến Tre ngày 17/1/1960), lan rộng khắp
+        Nam Bộ. Thắng lợi này chuyển cách mạng miền Nam từ thế giữ gìn lực lượng sang thế tiến công , dẫn đến sự ra đời
+        của Mặt trận Dân tộc giải phóng miền Nam Việt Nam (20/12/1960). </p>
+
+      <p class="align-justify">b) Giai đoạn 1961 - 1965: Xây dựng CNXH ở MB, đánh bại "Chiến tranh đặc biệt" ở MN </p>
+
+      <p>Đại hội Đảng lần thứ III (9/1960) đề ra đường lối chung là thực hiện đồng thời hai chiến lược cách mạng: Cách
+        mạng XHCN ở miền Bắc và Cách mạng Dân tộc dân chủ nhân dân ở miền Nam. Đại hội xác định miền Bắc có vai trò
+        quyết định nhất, và miền Nam có vai trò quyết định trực tiếp. Miền Bắc bắt tay vào Kế hoạch 5 năm lần thứ nhất
+        (1961-1965), dấy lên các phong trào thi đua như "Đại Phong", "Duyên Hải", "Bắc Lý", "Ba nhất". Đồng thời, miền
+        Bắc tăng cường chi viện cho miền Nam, mở đường 559 (bộ) và đường 759 (biển - "tàu không số"). Ở Miền Nam, Mỹ
+        chuyển sang chiến lược "Chiến tranh đặc biệt" (1961), dùng "cố vấn Mỹ, vũ khí Mỹ và quân ngụy" , lấy "Ấp chiến
+        lược" làm "quốc sách". Ta chủ trương "ba mũi giáp công" (quân sự, chính trị, binh vận) trên "ba vùng chiến lược"
+        (đô thị, đồng bằng, rừng núi). Chiến thắng Ấp Bắc (2/1/1963) đã chứng tỏ khả năng thắng "Chiến tranh đặc biệt".
+        Với các chiến thắng lớn tiếp theo như Bình Giã (12/1964) và Ba Gia (5/1965), ta đã làm phá sản chiến lược này
+        vào giữa năm 1965.</p>
+
+    </div>
+
+    <div>
+      <img src="https://img.loigiaihay.com/picture/2020/0715/chien-thuat-truc-thang-van-cua-mi.png"
+        alt="Ảnh minh họa 3">
+    </div>
+
+
+    <div>
+      <h2>2. Lãnh đạo cách mạng cả nước (1965 - 1975)</h2>
+      <p class="align-justify">a) Đường lối kháng chiến chống Mỹ (1965)</p>
+      <p>Do thất bại của "Chiến tranh đặc biệt", Mỹ ồ ạt đưa quân chiến đấu Mỹ vào miền Nam (đổ bộ Đà Nẵng 8/3/1965),
+        chuyển sang chiến lược "Chiến tranh cục bộ" và ném bom phá hoại miền Bắc. Hội nghị TƯ 11 (3/1965) và 12
+        (12/1965) đã phát động cuộc kháng chiến toàn quốc. Đảng nêu cao quyết tâm "Quyết tâm đánh thắng giặc Mỹ xâm
+        lược". Vai trò hai miền được xác định: Miền Nam là tiền tuyến lớn (quyết định trực tiếp), Miền Bắc là hậu phương
+        lớn (quyết định nhất) , với khẩu hiệu chung là "Tất cả để đánh thắng giặc Mỹ xâm lược". </p>
+
+      <p class="align-justify"> b) Đánh bại "Chiến tranh cục bộ" (1965 - 1968) </p>
+
+      <p>Ở Miền Bắc, ta chống chiến tranh phá hoại lần thứ nhất, dấy lên phong trào "Ba sẵn sàng", "Ba đảm đang". Chủ
+        tịch Hồ Chí Minh ra Lời kêu gọi (17/7/1966) với chân lý: "Không có gì quý hơn độc lập, tự do". Miền Bắc đã bắn
+        rơi 3.200 máy bay và chi viện 14 vạn quân cho miền Nam (năm 1968), buộc Mỹ phải ngừng ném bom ngày 1/11/1968. Ở
+        Miền Nam, ta lần lượt đánh bại hai cuộc phản công mùa khô 1965-1966 (thắng Vạn Tường 8/1965) và 1966-1967. Hội
+        nghị TƯ 13 (1/1967) quyết định mở mặt trận ngoại giao. Đỉnh cao là Cuộc Tổng tiến công và nổi dậy Mậu Thân 1968,
+        quyết định bởi Hội nghị TƯ 14 (1/1968) nhằm "tổng công kích - tổng khởi nghĩa". Cuộc tiến công bùng nổ đêm 30
+        rạng 31/1/1968, đánh vào 4/6 thành phố và 37/42 thị xã. Thắng lợi này làm phá sản "Chiến tranh cục bộ", buộc Mỹ
+        chấp nhận đàm phán tại Paris (từ 13/5/1968). Tuy nhiên, sau Tết, ta có "biểu hiện chủ quan", tiếp tục mở các đợt
+        tiến công vào đô thị khi không còn điều kiện, đây "là sai lầm về chỉ đạo chiến lược", gây tổn thất lớn. Sau sự
+        kiện này, Chính phủ cách mạng lâm thời Cộng hòa miền Nam Việt Nam được thành lập (6/6/1969).</p>
+
+      <p class="align-justify">c) Cuộc tiến công Đông Xuân 1953-1954 và Chiến dịch Điện Biên Phủ</p>
+
+      <p>Tháng 7/1953, Pháp (với sự can thiệp của Mỹ) đề ra kế hoạch Nava hòng "chuyển bại thành thắng" trong 18 tháng.
+        Nava tập trung quân, xây dựng Điện Biên Phủ thành "một pháo đài khổng lồ không thể công phá". Trước tình hình
+        đó, tháng 9/1953, Bộ Chính trị quyết định mở cuộc tiến công chiến lược Đông Xuân 1953 - 1954, buộc địch phải
+        phân tán lực lượng để đối phó. Ta đồng loạt tấn công trên nhiều hướng (Lai Châu, Trung Lào, Hạ Lào, Tây Nguyên,
+        Thượng Lào), khiến kế hoạch tập trung quân của Nava bị phá sản. Ngày 6/12/1953, Bộ Chính trị quyết định mở Chiến
+        dịch Điện Biên Phủ , với phương châm chiến lược được thay đổi từ "đánh nhanh, thắng nhanh" sang "đánh chắc, tiến
+        chắc". Chiến dịch mở màn ngày 13/3/1954 và kết thúc thắng lợi vào 17h30 ngày 7/5/1954, bắt sống tướng Đờ Cátơri.
+        Chiến thắng này "đi vào lịch sử thế giới như một chiến công hiển hách", báo hiệu sự sụp đổ của chủ nghĩa thực
+        dân. Thắng lợi này đã tác động trực tiếp đến Hội nghị Giơnevơ, khai mạc ngày 8/5/1954. Ngày 21/7/1954, Hiệp định
+        được ký kết, trong đó các nước cam kết tôn trọng độc lập, chủ quyền, thống nhất và toàn vẹn lãnh thổ của Việt
+        Nam, Lào, Campuchia.</p>
+
+      <p class="align-justify">c) Đánh bại "Việt Nam hóa chiến tranh", kết thúc chiến tranh (1969 - 1975)</p>
+
+      <p>Trong giai đoạn 1969 - 1972, Mỹ thực hiện chiến lược "Việt Nam hóa chiến tranh", dùng "người Việt Nam đánh
+        người Việt Nam", đồng thời mở rộng chiến tranh ra Lào và Campuchia (Đông Dương hóa). Đây cũng là thời điểm Chủ
+        tịch Hồ Chí Minh qua đời (2/9/1969). Về quân sự, ta phối hợp với Lào và Campuchia đập tan các cuộc hành quân lớn
+        của địch như Lam Sơn 719 (Đường 9 - Nam Lào, 1971) và Toàn thắng 1/1971 (Đông Bắc Campuchia), làm suy yếu quân
+        ngụy. Năm 1972, ta mở cuộc tiến công chiến lược lớn, giải phóng tỉnh Quảng Trị. Mỹ đã "Mỹ hóa" trở lại cuộc
+        chiến, tiến hành chiến tranh phá hoại miền Bắc lần thứ hai từ tháng 4/1972. Đỉnh điểm là 12 ngày đêm "Điện Biên
+        Phủ trên không" (12/1972), khi Mỹ dùng B-52 rải thảm Hà Nội, Hải Phòng. Ta đã đập tan cuộc tập kích này, bắn rơi
+        84 máy bay, trong đó có 34 chiếc B-52 , buộc Mỹ phải tuyên bố ngừng hẳn phá hoại miền Bắc vào ngày 15/1/1973.
+      </p>
+      <p>Những thắng lợi quân sự này buộc Mỹ phải ký Hiệp định Paris vào ngày 27/1/1973. Nội dung chính của hiệp định là
+        Hoa Kỳ cam kết tôn trọng độc lập, chủ quyền, thống nhất của Việt Nam và rút hết quân Mỹ cùng đồng minh. Hiệp
+        định Paris có ý nghĩa to lớn, giúp ta đạt được mục tiêu "đánh cho Mỹ cút", tạo ra cơ hội lớn để tiến lên "đánh
+        cho ngụy nhào".</p>
+      <p>Sau hiệp định (giai đoạn 1973-1975), Mỹ-ngụy liên tục vi phạm, tiếp tục "bình định" và lấn chiếm. Hội nghị TƯ
+        21 (7/1973) nhấn mạnh con đường cách mạng miền Nam vẫn là "con đường bạo lực cách mạng" và chuẩn bị tiến lên
+        giải phóng hoàn toàn. Chiến thắng Phước Long (6/1/1975) có ý nghĩa như một "đòn thăm dò chiến lược", cho thấy
+        quân ngụy đã suy yếu và Mỹ không thể trở lại can thiệp. Cuối 1974 - đầu 1975, Bộ Chính trị đề ra kế hoạch giải
+        phóng miền Nam trong 2 năm 1975-1976, đồng thời dự kiến "nếu thời cơ đến... thì lập tức giải phóng miền Nam ngay
+        trong năm 1975".</p>
+      <p>Cuộc Tổng tiến công và nổi dậy Mùa xuân 1975 mở màn bằng Chiến dịch Tây Nguyên, với trận then chốt ở Buôn Ma
+        Thuột (10/3/1975). Thắng lợi nhanh chóng, ta tiếp tục giải phóng Huế (26/3) và Đà Nẵng (29/3). Trước thời cơ
+        lớn, Bộ Chính trị bổ sung quyết tâm "giải phóng miền Nam trước mùa mưa" (25/3) và ban hành mệnh lệnh "Thần tốc,
+        thần tốc hơn nữa..." (7/4). Chiến dịch Hồ Chí Minh lịch sử mở màn ngày 26/4/1975. Vào 11 giờ 30 phút ngày
+        30/4/1975, lá cờ chiến thắng được cắm trên Dinh Độc Lập, giải phóng Sài Gòn. Đến ngày 2/5/1975, các tỉnh/thành
+        còn lại ở đồng bằng sông Cửu Long và các đảo được giải phóng hoàn toàn, kết thúc thắng lợi cuộc kháng chiến
+        chống Mỹ, cứu nước.</p>
+
+    </div>
+
 
     <!-- === PHẦN 6: NHIỀU ẢNH === -->
     <div>
-      <h2>Phần 6: Một số hình ảnh tư liệu</h2>
+      <h2>Một số hình ảnh tư liệu</h2>
       <!-- Dùng CSS Grid đơn giản để chia cột -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 100%; margin: 1em 0;">
-        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6a" alt="Tư liệu 1" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6b" alt="Tư liệu 2" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6c" alt="Tư liệu 3" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 100%; margin: 1em 0;">
+        <img src="https://img.loigiaihay.com/picture/2020/0715/pha-ap-chien-luoc-khieng-nha-ve-noi-o-cu.png"
+          alt="Tư liệu 1" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img
+          src="https://file3.qdnd.vn/data/images/0/2023/09/22/tvtuongvy/nam bo khang chien.jpg?dpi=150&quality=100&w=870"
+          alt="Tư liệu 2" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2FScreenshot%202025-10-31%20063959.png?alt=media&token=23d49a29-76f6-4fdb-9f53-e9a51afbbcd6"
+          alt="Tư liệu 3" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       </div>
+
+      <div
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 100%; margin: 1em 0;">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2FScreenshot%202025-10-31%20063130.png?alt=media&token=f9f6ac14-987a-443c-857a-fd9b48884028"
+          alt="Tư liệu 1" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img src="https://vnp.1cdn.vn/2025/04/10/halv-mega-3-2400-x-4800-px-19-.png" alt="Tư liệu 2"
+          style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img
+          src="https://file3.qdnd.vn/data/images/0/2022/12/06/duyhoan_kh/bac ho voi nhan dan.jpg?dpi=150&quality=100&w=870"
+          alt="Tư liệu 3" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      </div>
+
+
+
     </div>
 
     <!-- === PHẦN 7: VĂN NÓI (KẾT) === -->
     <div>
-      <h2>Phần 7: Kết luận</h2>
-      <p class="align-justify">Nội dung văn bản kết luận. Cảm ơn vì đã xem và trải nghiệm dự án.</p>
+
+      <div>
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2Fimage.jpg?alt=media&token=2903e1ed-87d8-450a-8bbd-cbfa10e991d8"
+          alt="Ảnh minh họa 3">
+      </div>
+
     </div>
 
   </div> <!-- Kết thúc <div class="entry"> -->
@@ -187,10 +427,10 @@
       if (type == 'error') div.style = 'background: red; padding: 10px;';
       else {
         if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-        setTimeout(function() {
+        setTimeout(function () {
           if (div.parentNode === warningBanner) {
-             warningBanner.removeChild(div);
-             updateBannerVisibility();
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
           }
         }, 5000);
       }
@@ -244,18 +484,18 @@
 
   <!-- === (5) SCRIPT CHATBOX AI (GIỮ NGUYÊN BẢN SỬA LỖI INPUT CUỐI CÙNG) === -->
   <script type="text/babel">
-    
+
     const { useState, useEffect, useRef, forwardRef } = React;
-    
+
     const cn = (...classes) => classes.filter(Boolean).join(' ');
 
-    const MessageCircle = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>);
-    const X = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>);
-    const Send = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="m22 2-11 11"/></svg>);
-    const Bot = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>);
-    const User = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>);
-    const Minimize2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>);
-    const Trash2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>);
+    const MessageCircle = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" /></svg>);
+    const X = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>);
+    const Send = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="m22 2-11 11" /></svg>);
+    const Bot = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></svg>);
+    const User = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>);
+    const Minimize2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" /></svg>);
+    const Trash2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18" /><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /><line x1="10" x2="10" y1="11" y2="17" /><line x1="14" x2="14" y1="11" y2="17" /></svg>);
 
     const Button = forwardRef(({ className, variant = 'default', size = 'default', ...props }, ref) => {
       const base = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none";
@@ -317,10 +557,28 @@
     }
 
     const quickReplies = [
-      { id: "1", text: "Quan điểm của Bác Hồ", message: "Quan điểm của Chủ tịch Hồ Chí Minh về tham nhũng là gì?" },
-      { id: "2", text: "Hậu quả tham nhũng", message: "Hậu quả của tham nhũng là gì?" },
-      { id: "3", text: "Giải pháp", message: "Các giải pháp chống tham nhũng theo tư tưởng Hồ Chí Minh là gì?" },
-      { id: "4", text: "Vai trò nhân dân", message: "Nhân dân có vai trò gì trong công cuộc phòng, chống tham nhũng?" }
+      [
+        {
+          id: "1",
+          text: "Tình thế 1945-1946",
+          message: "Tình hình Việt Nam sau Cách mạng Tháng Tám 1945 khó khăn như thế nào?"
+        },
+        {
+          id: "2",
+          text: "Chiến thắng Điện Biên Phủ",
+          message: "Ý nghĩa của chiến thắng Điện Biên Phủ (1954) là gì?"
+        },
+        {
+          id: "3",
+          text: "Vai trò của 2 miền (1960)",
+          message: "Đại hội III (1960) xác định vai trò của cách mạng 2 miền như thế nào?"
+        },
+        {
+          id: "4",
+          text: "Giải phóng Miền Nam 1975",
+          message: "Cuộc Tổng tiến công và nổi dậy Mùa xuân 1975 diễn ra như thế nào?"
+        }
+      ]
     ];
 
     function Chatbox() {
@@ -337,7 +595,7 @@
       useEffect(() => {
         setMessages([{
           id: "welcome",
-          content: "Xin chào! 👋 Tôi là Trợ lý AI, sẵn sàng giải đáp các thắc mắc về phòng, chống tham nhũng theo tư tưởng Hồ Chí Minh.",
+          content: "Xin chào! 👋 Tôi là Trợ lý AI, sẵn sàng giải đáp các thắc mắc của bạn về trang",
           role: "assistant",
           timestamp: new Date(),
         }]);
@@ -440,7 +698,7 @@
                             if (canvas) canvas.blur();
                           }}
                           onKeyDown={(e) => {
-                            e.stopPropagation(); 
+                            e.stopPropagation();
                             if (e.key === 'Enter') {
                               e.preventDefault();
                               handleSendMessage();
@@ -464,7 +722,7 @@
         </React.Fragment>
       );
     }
-    
+
     // --- KHỞI ĐỘNG REACT ---
     const domNode = document.getElementById('chatbox-root');
     const root = ReactDOM.createRoot(domNode);
@@ -473,4 +731,5 @@
   </script>
 
 </body>
+
 </html>
