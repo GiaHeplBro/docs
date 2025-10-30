@@ -37,10 +37,7 @@
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
-  <script src="https://unpkg.com/react-markdown@8.0.7/umd/react-markdown.js"></script>
-
-
-</head>
+  </head>
 <body>
 
   <div class="content-section">
@@ -145,7 +142,6 @@
     
     // Lấy các hàm cần thiết từ thư viện React (đã tải ở head)
     const { useState, useEffect, useRef, forwardRef } = React;
-    // const ReactMarkdown = window.ReactMarkdown; // Lấy global variable từ script đã tải
     
     // --- BẮT ĐẦU GỘP CODE CỦA BẠN VÀO ĐÂY ---
 
@@ -227,7 +223,7 @@
       { id: "1", text: "Quan điểm của Bác Hồ", message: "Quan điểm của Chủ tịch Hồ Chí Minh về tham nhũng là gì?" },
       { id: "2", text: "Hậu quả tham nhũng", message: "Hậu quả của tham nhũng là gì?" },
       { id: "3", text: "Giải pháp", message: "Các giải pháp chống tham nhũng theo tư tưởng Hồ Chí Minh là gì?" },
-      { id: "4", text: "Vai trò nhân dân", message: "Nhân dân có vai trò gì trong công cuộc phòng, chống tham nhũng?" } // ĐÃ SỬA ID TỪ 44 VỀ 4
+      { id: "4", text: "Vai trò nhân dân", message: "Nhân dân có vai trò gì trong công cuộc phòng, chống tham nhũng?" }
     ];
 
     function Chatbox() {
@@ -274,7 +270,6 @@
 
       const formatTime = (date) => date.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
 
-      // ĐÃ SỬA: Bỏ cặp dấu () thừa bên ngoài
       return React.createElement(React.Fragment, null,
         !isOpen && (
           React.createElement("div", { className: "fixed bottom-6 right-6 z-50" },
@@ -313,7 +308,11 @@
                     messages.map((msg) => (
                       React.createElement("div", { key: msg.id, className: `flex items-end gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}` },
                         React.createElement("div", { className: `prose prose-sm max-w-[85%] rounded-lg p-3 ${msg.role === "user" ? "bg-[#CB0118] text-white" : "bg-white border shadow-sm"}` },
-                          React.createElement(ReactMarkdown, null, msg.content), // Đây là lúc ReactMarkdown được gọi
+                          
+                          // === ĐÂY LÀ DÒNG ĐÃ SỬA ===
+                          // Thay thế ReactMarkdown bằng hiển thị text thuần túy
+                          msg.content, 
+                          
                           React.createElement("div", { className: `text-xs mt-2 text-right ${msg.role === "user" ? "text-white/70" : "text-gray-400"}` }, formatTime(msg.timestamp))
                         )
                       )
