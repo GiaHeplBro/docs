@@ -360,8 +360,14 @@
                           onChange={(e) => setInputMessage(e.target.value)}
 
                           // --- BẮT ĐẦU SỬA ---
-                          // Thêm các hàm onKeyDown, onKeyUp, và onKeyPress
-                          // để "chặn" sự kiện lại, không cho Unity "nuốt" mất.
+
+                          // (1) Gỡ focus khỏi game khi click vào ô chat
+                          onFocus={() => {
+                            const canvas = document.querySelector("#unity-canvas");
+                            if (canvas) canvas.blur();
+                          }}
+
+                          // (2) Chặn sự kiện phím (như cũ)
                           onKeyDown={(e) => {
                             e.stopPropagation();
                             if (e.key === 'Enter') {
@@ -371,6 +377,7 @@
                           }}
                           onKeyUp={(e) => e.stopPropagation()}
                           onKeyPress={(e) => e.stopPropagation()}
+
                           // --- KẾT THÚC SỬA ---
 
                           placeholder="Nhập câu hỏi của bạn..."
