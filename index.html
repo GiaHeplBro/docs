@@ -353,7 +353,30 @@
                     </div>
                     <div className="p-3 border-t bg-white flex-shrink-0">
                       <div className="flex items-center space-x-2">
-                        <Input value={inputMessage} onChange={(e) => setInputMessage(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()} placeholder="Nhập câu hỏi của bạn..." className="flex-1" />
+
+
+                        <Input
+                          value={inputMessage}
+                          onChange={(e) => setInputMessage(e.target.value)}
+
+                          // --- BẮT ĐẦU SỬA ---
+                          // Thêm các hàm onKeyDown, onKeyUp, và onKeyPress
+                          // để "chặn" sự kiện lại, không cho Unity "nuốt" mất.
+                          onKeyDown={(e) => {
+                            e.stopPropagation();
+                            if (e.key === 'Enter') {
+                              e.preventDefault(); // Ngăn phím Enter tạo dòng mới
+                              handleSendMessage();
+                            }
+                          }}
+                          onKeyUp={(e) => e.stopPropagation()}
+                          onKeyPress={(e) => e.stopPropagation()}
+                          // --- KẾT THÚC SỬA ---
+
+                          placeholder="Nhập câu hỏi của bạn..."
+                          className="flex-1"
+                        />
+
                         <Button onClick={() => handleSendMessage()} disabled={!inputMessage.trim() || isTyping} size="icon" className="bg-[#CB0118] text-white w-9 h-9 flex-shrink-0">
                           <Send className="w-4 h-4" />
                         </Button>
