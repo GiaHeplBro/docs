@@ -1,152 +1,378 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | VNR202</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity Web Player | VNR202</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
 
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      .content-section {
-        max-width: 960px; /* Giống chiều rộng của game */
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      }
-      .content-section img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 4px;
-      }
-      h1, h2 {
-        color: #333;
-      }
-    </style>
+  <!-- === (1) THÊM CSS NỘI DUNG & REACT CDN = == -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .content-section {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .content-section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    h1, h2 { color: #333; }
+    
+    /* CSS cho Tailwind (sử dụng trong Chatbox) */
+    /* Chúng ta cần tải Tailwind CSS để Chatbox của bạn hiển thị đúng */
+    /* Đây là một file lớn, nhưng cần thiết cho code React của bạn */
+    
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  </head>
-  <body>
+  <!-- Thư viện "dạy" trình duyệt cách đọc React -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-markdown/8.0.7/react-markdown.min.js"></script>
 
-    <div class="content-section">
-      <h1>Tiêu đề bài thuyết trình của bạn</h1>
-      <p>Đây là đoạn văn giới thiệu. Bạn có thể viết nội dung, giải thích về dự án, về bối cảnh lịch sử, tư tưởng Hồ Chí Minh, v.v. giống như trang VietnamPlus.</p>
-      
-      <img src="https://placehold.co/960x400" alt="Ảnh minh họa cho bài thuyết trình">
-      
-      <h2>Đây là một tiểu mục</h2>
-      <p>Bạn có thể viết thêm nội dung ở đây. Người dùng sẽ kéo xuống để đọc hết phần này trước khi thấy game.</p>
-      <p>...</p>
-      <p>...</p>
-      <p>...</p>
-      <h2>Trải nghiệm Game</h2>
-      <p>Bây giờ, xin mời bạn trải nghiệm trò chơi tương tác của chúng tôi ngay bên dưới:</p>
+
+</head>
+<body>
+
+  <!-- === (2) NỘI DUNG THUYẾT TRÌNH === -->
+  <div class="content-section">
+    <h1>Tiêu đề bài thuyết trình của bạn</h1>
+    <p>Đây là đoạn văn giới thiệu. Bạn có thể viết nội dung, giải thích về dự án, về bối cảnh lịch sử, tư tưởng Hồ Chí Minh, v.v. giống như trang VietnamPlus.</p>
+    <img src="https://placehold.co/960x400/b91c1c/white?text=Ảnh+minh+họa" alt="Ảnh minh họa">
+    <h2>Trải nghiệm Game</h2>
+    <p>Xin mời bạn trải nghiệm trò chơi tương tác của chúng tôi ngay bên dưới:</p>
+  </div>
+
+
+  <!-- === (3) GAME UNITY (GIỮ NGUYÊN) === -->
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
+        <div id="unity-progress-bar-full"></div>
+      </div>
     </div>
-
-
-        <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">VNR202</div>
-      </div>
-    </div>
-
-    <div class="content-section">
-      <h2>Phần kết luận</h2>
-      <p>Cảm ơn bạn đã chơi game. Đây là phần tóm tắt, kết luận, hoặc kêu gọi hành động.</p>
+    <div id="unity-warning"> </div>
+    <div id="unity-footer">
+      <div id="unity-logo-title-footer"></div>
+      <div id="unity-fullscreen-button"></div>
+      <div id="unity-build-title">VNR202</div>
     </div>
+  </div>
+
+  <!-- === (4) NỘI DUNG KẾT LUẬN === -->
+  <div class="content-section">
+    <h2>Phần kết luận</h2>
+    <p>Cảm ơn bạn đã chơi game. Đây là phần tóm tắt, kết luận, hoặc kêu gọi hành động.</p>
+  </div>
 
 
-        <script>
-      var canvas = document.querySelector("#unity-canvas");
-      // ... (Toàn bộ code script gốc của Unity được giữ nguyên) ...
-      // ...
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
+  <!-- === (5) SCRIPT GAME UNITY (GIỮ NGUYÊN) === -->
+  <script>
+    var canvas = document.querySelector("#unity-canvas");
+    function unityShowBanner(msg, type) {
+      var warningBanner = document.querySelector("#unity-warning");
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+      }
+      var div = document.createElement('div');
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == 'error') div.style = 'background: red; padding: 10px;';
+      else {
+        if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+        setTimeout(function() {
+          if (div.parentNode === warningBanner) {
+             warningBanner.removeChild(div);
+             updateBannerVisibility();
+          }
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/docs.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/docs.data",
-        frameworkUrl: buildUrl + "/docs.framework.js",
-        codeUrl: buildUrl + "/docs.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "VNR202",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
-      // ...
-      // ... (Toàn bộ code script gốc của Unity được giữ nguyên) ...
-      // ...
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // ... (code mobile) ...
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-      } else {
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/docs.loader.js";
+    var config = {
+      arguments: [],
+      dataUrl: buildUrl + "/docs.data",
+      frameworkUrl: buildUrl + "/docs.framework.js",
+      codeUrl: buildUrl + "/docs.wasm",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "VNR202",
+      productVersion: "1.0",
+      showBanner: unityShowBanner,
+    };
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.getElementsByTagName('head')[0].appendChild(meta);
+      document.querySelector("#unity-container").className = "unity-mobile";
+      canvas.className = "unity-mobile";
+    } else {
+      canvas.style.width = "960px";
+      canvas.style.height = "600px";
+    }
+    document.querySelector("#unity-loading-bar").style.display = "block";
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        document.querySelector("#unity-loading-bar").style.display = "none";
+        document.querySelector("#unity-fullscreen-button").onclick = () => {
+          unityInstance.SetFullscreen(1);
+        };
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
 
-      document.querySelector("#unity-loading-bar").style.display = "block";
+  <!-- === (6) NƠI CHATBOX SẼ "GẮN" VÀO === -->
+  <div id="chatbox-root"></div>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+  <!-- === (7) SCRIPT CHATBOX AI (CODE REACT CỦA BẠN) === -->
+  <!-- Thẻ script này dùng type="text/babel" để "phiên dịch" React -->
+  <script type="text/babel">
+    
+    // Lấy các hàm cần thiết từ thư viện React (đã tải ở head)
+    const { useState, useEffect, useRef, forwardRef } = React;
+    
+    // --- BẮT ĐẦU GỘP CODE CỦA BẠN VÀO ĐÂY ---
 
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+    // 1. Helper function
+    const cn = (...classes) => classes.filter(Boolean).join(' ');
 
-      document.body.appendChild(script);
+    // 2. Thay thế các icon Lucide bằng SVG (vì import không hoạt động ở đây)
+    // Bạn không cần làm gì, tôi đã tìm SVG cho bạn
+    const MessageCircle = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>;
+    const X = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>;
+    const Send = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="m22 2-11 11"/></svg>;
+    const Bot = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>;
+    const User = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>;
+    const Minimize2 = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>;
+    const Trash2 = () => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>;
 
-    </script>
+    // 3. Các Component UI (từ code của bạn)
+    const Button = forwardRef(({ className, variant = 'default', size = 'default', ...props }, ref) => {
+      const base = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none";
+      const variants = {
+        default: "bg-red-600 text-white shadow hover:bg-red-700",
+        ghost: "hover:bg-white/20",
+        outline: "border border-gray-300 bg-white text-gray-700 hover:bg-gray-100",
+      };
+      const sizes = {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-md px-3 text-xs",
+        icon: "h-9 w-9",
+      };
+      return <button ref={ref} className={cn(base, variants[variant], sizes[size], className)} {...props} />;
+    });
+    Button.displayName = 'Button';
 
-      </body>
+    const Card = forwardRef((props, ref) => <div ref={ref} className={cn("bg-white rounded-lg", props.className)} {...props} />);
+    Card.displayName = 'Card';
+
+    const CardHeader = forwardRef((props, ref) => <div ref={ref} className={cn("p-3", props.className)} {...props} />);
+    CardHeader.displayName = 'CardHeader';
+
+    const Input = forwardRef((props, ref) => <input ref={ref} className={cn("flex h-9 w-full rounded-md border border-gray-300 bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-red-500", props.className)} {...props} />);
+    Input.displayName = 'Input';
+
+    // 4. Custom Hook (từ useChatApi.js)
+    function useChatApi() {
+      const [isTyping, setIsTyping] = useState(false);
+      const sendMessage = async (message) => {
+        setIsTyping(true);
+        const API_URL = "https://seo-flask-api.azurewebsites.net/ask_gemini_hcm";
+        try {
+          const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: message }),
+          });
+          if (!response.ok) throw new Error("Network response was not ok");
+          const data = await response.json();
+          return {
+            id: Date.now().toString(),
+            content: data.answer || "Lỗi: Không nhận được phản hồi.",
+            role: "assistant",
+            timestamp: new Date(),
+          };
+        } catch (error) {
+          console.error("API Error:", error);
+          return {
+            id: Date.now().toString(),
+            content: "Xin lỗi, đã có lỗi xảy ra. Vui lòng thử lại.",
+            role: "assistant",
+            timestamp: new Date(),
+          };
+        } finally {
+          setIsTyping(false);
+        }
+      };
+      return { sendMessage, isTyping };
+    }
+
+    // 5. Component Chatbox chính (từ Chatbox.jsx)
+    const quickReplies = [
+      { id: "1", text: "Quan điểm của Bác Hồ", message: "Quan điểm của Chủ tịch Hồ Chí Minh về tham nhũng là gì?" },
+      { id: "2", text: "Hậu quả tham nhũng", message: "Hậu quả của tham nhũng là gì?" },
+      { id: "3", text: "Giải pháp", message: "Các giải pháp chống tham nhũng theo tư tưởng Hồ Chí Minh là gì?" },
+      { id: "44", text: "Vai trò nhân dân", message: "Nhân dân có vai trò gì trong công cuộc phòng, chống tham nhũng?" }
+    ];
+
+    function Chatbox() {
+      const [isOpen, setIsOpen] = useState(false);
+      const [isMinimized, setIsMinimized] = useState(false);
+      const [messages, setMessages] = useState([]);
+      const [inputMessage, setInputMessage] = useState("");
+      const [showQuickReplies, setShowQuickReplies] = useState(true);
+      const [unreadCount, setUnreadCount] = useState(1);
+
+      const { sendMessage, isTyping } = useChatApi();
+      const messagesEndRef = useRef(null);
+
+      useEffect(() => {
+        setMessages([{
+          id: "welcome",
+          content: "Xin chào! 👋 Tôi là Trợ lý AI, sẵn sàng giải đáp các thắc mắc về phòng, chống tham nhũng theo tư tưởng Hồ Chí Minh.",
+          role: "assistant",
+          timestamp: new Date(),
+        }]);
+      }, []);
+
+      useEffect(() => { if (isOpen) setUnreadCount(0); }, [isOpen]);
+      useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages, isTyping]);
+
+      const handleSendMessage = async (text) => {
+        const content = text || inputMessage;
+        if (!content.trim()) return;
+
+        const userMsg = { id: Date.now().toString(), content, role: "user", timestamp: new Date() };
+        setMessages((prev) => [...prev, userMsg]);
+        setInputMessage("");
+        setShowQuickReplies(false);
+
+        const botMsg = await sendMessage(content);
+        setMessages((prev) => [...prev, botMsg]);
+        if (!isOpen) setUnreadCount((c) => c + 1);
+      };
+
+      const clearChat = () => {
+        setMessages((prev) => prev.slice(0, 1));
+        setShowQuickReplies(true);
+      };
+
+      const formatTime = (date) => date.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" });
+
+      return (
+        React.createElement(React.Fragment, null,
+          !isOpen && (
+            React.createElement("div", { className: "fixed bottom-6 right-6 z-50" },
+              React.createElement(Button, { onClick: () => setIsOpen(true), size: "icon", className: "w-16 h-16 rounded-full bg-[#CB0118] text-white shadow-lg animate-bounce hover:shadow-xl hover:scale-105 transition-all duration-300 relative" },
+                React.createElement(MessageCircle, { className: "w-8 h-8" })
+              ),
+              unreadCount > 0 && (
+                React.createElement("div", { className: "absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center border-2 border-white" },
+                  React.createElement("span", { className: "text-xs text-white font-bold" }, unreadCount > 9 ? "9+" : unreadCount)
+                )
+              )
+            )
+          ),
+          isOpen && (
+            React.createElement("div", { className: "fixed bottom-6 right-6 z-50 w-full max-w-sm" },
+              React.createElement(Card, { className: "shadow-2xl border-0 overflow-hidden flex flex-col h-[60vh] max-h-[700px]" },
+                React.createElement(CardHeader, { className: "bg-[#CB0118] text-white p-3 flex-shrink-0" },
+                  React.createElement("div", { className: "flex items-center justify-between" },
+                    React.createElement("div", { className: "flex items-center space-x-3" },
+                      React.createElement("div", { className: "w-10 h-10 bg-white/20 rounded-full flex items-center justify-center" }, React.createElement(Bot, { className: "w-6 h-6" })),
+                      React.createElement("div", null,
+                        React.createElement("h3", { className: "font-semibold text-base" }, "Trợ lý AI"),
+                        React.createElement("p", { className: "text-xs opacity-80" }, "Đang hoạt động")
+                      )
+                    ),
+                    React.createElement("div", { className: "flex space-x-1" },
+                      React.createElement(Button, { variant: "ghost", size: "icon", className: "text-white w-8 h-8", onClick: clearChat }, React.createElement(Trash2, { className: "w-4 h-4" })),
+                      React.createElement(Button, { variant: "ghost", size: "icon", className: "text-white w-8 h-8", onClick: () => setIsMinimized(!isMinimized) }, React.createElement(Minimize2, { className: "w-4 h-4" })),
+                      React.createElement(Button, { variant: "ghost", size: "icon", className: "text-white w-8 h-8", onClick: () => setIsOpen(false) }, React.createElement(X, { className: "w-4 h-4" }))
+                    )
+                  )
+                ),
+                !isMinimized && (
+                  React.createElement(React.Fragment, null,
+                    React.createElement("div", { className: "flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50" },
+                      messages.map((msg) => (
+                        React.createElement("div", { key: msg.id, className: `flex items-end gap-2 ${msg.role === "user" ? "justify-end" : "justify-start"}` },
+                          React.createElement("div", { className: `prose prose-sm max-w-[85%] rounded-lg p-3 ${msg.role === "user" ? "bg-[#CB0118] text-white" : "bg-white border shadow-sm"}` },
+                            React.createElement(ReactMarkdown, null, msg.content),
+                            React.createElement("div", { className: `text-xs mt-2 text-right ${msg.role === "user" ? "text-white/70" : "text-gray-400"}` }, formatTime(msg.timestamp))
+                          )
+                        )
+                      )),
+                      isTyping && (
+                        React.createElement("div", { className: "flex justify-start" }, React.createElement("div", { className: "bg-white border rounded-lg p-3 shadow-sm" }, React.createElement("div", { className: "flex items-center space-x-2" }, React.createElement(Bot, { className: "w-4 h-4 text-red-500" }), React.createElement("div", { className: "flex space-x-1" }, React.createElement("div", { className: "w-2 h-2 bg-[#CB0118] rounded-full animate-bounce" }), React.createElement("div", { className: "w-2 h-2 bg-[#CB0118] rounded-full animate-bounce delay-75" }), React.createElement("div", { className: "w-2 h-2 bg-[#CB0118] rounded-full animate-bounce delay-150" }))))
+                      ),
+                      showQuickReplies && messages.length <= 1 && (
+                        React.createElement("div", { className: "space-y-2 pt-4" },
+                          React.createElement("p", { className: "text-xs text-gray-500 text-center" }, "Câu hỏi gợi ý:"),
+                          React.createElement("div", { className: "grid grid-cols-2 gap-2" },
+                            quickReplies.map((qr) => (
+                              React.createElement(Button, { key: qr.id, variant: "outline", size: "sm", onClick: () => handleSendMessage(qr.message), className: "h-auto py-2 px-3 text-xs" },
+                                qr.text
+                              )
+                            ))
+                          )
+                        )
+                      ),
+                      React.createElement("div", { ref: messagesEndRef })
+                    ),
+                    React.createElement("div", { className: "p-3 border-t bg-white flex-shrink-0" },
+                      React.createElement("div", { className: "flex items-center space-x-2" },
+                        React.createElement(Input, { value: inputMessage, onChange: (e) => setInputMessage(e.target.value), onKeyDown: (e) => e.key === 'Enter' && handleSendMessage(), placeholder: "Nhập câu hỏi của bạn...", className: "flex-1" }),
+                        React.createElement(Button, { onClick: () => handleSendMessage(), disabled: !inputMessage.trim() || isTyping, size: "icon", className: "bg-[#CB0118] text-white w-9 h-9 flex-shrink-0" },
+                          React.createElement(Send, { className: "w-4 h-4" })
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+    
+    // --- KHỞI ĐỘNG REACT ---
+    // Tìm div rỗng mà chúng ta đã tạo
+    const domNode = document.getElementById('chatbox-root');
+    // Tạo "gốc" React
+    const root = ReactDOM.createRoot(domNode);
+    // "Vẽ" component Chatbox vào trong
+    root.render(React.createElement(Chatbox));
+
+  </script>
+
+</body>
 </html>
