@@ -32,9 +32,12 @@
 
     /* === ĐÂY LÀ PHẦN SỬA LỖI CHÈN/KẸT === */
     /* Ghi đè CSS của Unity, buộc game phải là một khối bình thường */
-    #unity-container {
-      position: relative !important; 
-      margin: 20px auto !important; /* Tự động căn giữa */
+#unity-container {
+      position: relative !important; /* Ghi đè 'position: absolute' */      
+      left: 25% !important; 
+      top: 100px !important;
+      transform: none !important; 
+      */
     }
     /* === KẾT THÚC SỬA LỖI === */
 
