@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,7 +7,14 @@
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
 
+  <!-- === (1) THÊM CSS NỘI DUNG & SỬA LỖI CHÈN/KẸT === -->
   <style>
+    /* ----- 1. Nhúng (Import) Fonts từ Google ----- */
+    /* Phải đặt ở đầu tiên */
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
+
+    /* Style body giữ nguyên */
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -17,82 +23,99 @@
       background-color: #f4f4f4;
     }
 
-    .content-section {
-      max-width: 960px;
-      /* Cùng chiều rộng với game */
-      margin: 20px auto;
-      /* Căn giữa và tạo khoảng cách */
-      padding: 20px;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Style ghi đè game Unity giữ nguyên */
+    #unity-container {
+      /* position: relative !important; */ 
+      left: 21% !important; 
+      top: 851px !important;
+      transform: none !important; 
     }
 
-    .content-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 4px;
+    /* ----- 2. CSS cho "Tiêu đề" (Tiêu đề chính của bài) ----- */
+    .article-title {
+      font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #222;
+      text-align: center;
+      line-height: 1.3;
+      margin: 40px auto 25px;
+      max-width: 700px;
     }
 
-    p.align-justify {
-      /* Các thuộc tính lấy từ class .entry (ảnh 2) */
+    /* ----- 3. CSS cho khu vực nội dung (Wrapper) ----- */
+    .entry {
       font-family: "IBM Plex Serif", Arial, Helvetica, sans-serif;
       font-size: 19px;
       line-height: 1.618;
       color: #222;
+      
+      /* Thêm padding và background cho khu vực bao bọc */
+      max-width: 960px; /* Cùng chiều rộng với game */
+      margin: 20px auto; /* Căn giữa và tạo khoảng cách */
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
 
-      /* Thuộc tính lấy từ .entry p (ảnh 1) */
+    /* ----- 4. CSS cho "Chương" (Tiêu đề của mục lớn) ----- */
+    .entry h2 {
+      font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.4;
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      /* Căn giữa tiêu đề phụ */
+      text-align: center;
+    }
+
+    /* ----- 5. CSS cho đoạn văn bản ----- */
+    .entry p {
       max-width: 600px;
-      margin: 0 auto 1em;
-      /* 0 lề trên, auto lề trái/phải (để căn giữa), 1em lề dưới */
+      margin: 0 auto 1em; /* Căn giữa khối văn bản và thêm lề dưới */
+    }
+    
+    /* CSS cho ảnh bên trong entry */
+    .entry img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 1em auto;
+      display: block; /* Giúp căn giữa ảnh */
+    }
 
-      /* Thuộc tính lấy từ .entry .align-justify (ảnh 1) */
+    /* ----- 6. CSS cho đoạn văn căn đều ----- */
+    .entry .align-justify {
       text-align: justify;
     }
-
-    h1,
-    h2 {
-      color: #333;
-    }
-
-    /* === ĐÂY LÀ PHẦN SỬA LỖI CHÈN/KẸT === */
-    /* Ghi đè CSS của Unity, buộc game phải là một khối bình thường */
-    /* === ĐÂY LÀ PHẦN SỬA LỖI CHÈN/KẸT === */
-    /* Ghi đè CSS của Unity, buộc game phải là một khối bình thường */
-    #unity-container {
-      /* position: relative !important;  */
-
-      /* CÁC THÔNG SỐ GHI ĐÈ NHƯ TRONG ẢNH CỦA BẠN */
-      left: 21% !important;
-      top: 851px !important;
-      transform: none !important;
-
-      /* Dòng 'margin' này nên bị tắt đi nếu bạn dùng 'left' và 'top' */
-      /* margin: 20px auto !important; */
-    }
-
-    /* === KẾT THÚC SỬA LỖI === */
-
-
-
-
-    /* === KẾT THÚC SỬA LỖI === */
+    
   </style>
-
+  
+  <!-- Tải Tailwind CSS (cho Chatbox) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Thư viện React (cho Chatbox) -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
+  
 </head>
-
 <body>
 
-  <div class="content-section" style="padding:0; box-shadow: none;">
+  <!-- === (2) BẮT ĐẦU 7 PHẦN NỘI DUNG CỦA BẠN === -->
+
+  <!-- === PHẦN 1: ẢNH TIÊU ĐỀ === -->
+  <!-- Đặt tiêu đề riêng ở ngoài -->
+  <h1 class="article-title">Tiêu đề bài thuyết trình của bạn (Phần 1)</h1>
+  <div style="max-width: 960px; margin: auto; padding: 0 20px;">
     <img src="https://vnp.1cdn.vn/2025/04/10/header-2.png" alt="Ảnh tiêu đề" style="width: 100%; border-radius: 8px;">
   </div>
 
+
+  <!-- === PHẦN 2: GAME UNITY === -->
   <div id="unity-container" class="unity-desktop">
     <canvas id="unity-canvas" width=960 height=600></canvas>
     <div id="unity-loading-bar">
@@ -109,59 +132,48 @@
     </div>
   </div>
 
-  <div class="content-section">
-    <img
-      src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2FScreenshot%202025-10-31%20054119.png?alt=media&token=026f0e1c-607f-41d8-95da-61c9ac1c21d8"
-      alt="Ảnh minh họa 2" style="width: 100%; border-radius: 8px;margin-top: 500px;">
-  </div>
+  <!-- Bọc các phần nội dung còn lại trong class "entry" -->
+  <div class="entry">
 
-  <div class="content-section">
-    <h2>Chương 2: Đảng lãnh đạo hai cuộc kháng chiến, hoàn thành giải phóng dân tộc, thống nhất đất nước (1945 - 1975)
-    </h2>
-    <i class="align-justify">I. Lãnh đạo xây dựng, bảo vệ chính quyền, kháng chiến chống Pháp (1945 - 1954)</i>
-    <i class="align-justify"> a) Tình hình Việt Nam sau Cách mạng Tháng Tám 1945</i>
-    <p class="align-justify">Sau ngày tuyên bố độc lập, chính quyền cách mạng non trẻ của Việt Nam đứng trước tình thế "ngàn cân treo sợi
-      tóc". Về thuận lợi, Việt Nam đã trở thành một quốc gia độc lập, Đảng Cộng sản trở thành Đảng cầm quyền, và nhân
-      dân tin tưởng vào chế độ mới do Chủ tịch Hồ Chí Minh đứng đầu. Tuy nhiên, khó khăn là vô cùng lớn, bao gồm "thù
-      trong, giặc ngoài". Nạn đói do hậu quả từ cuối 1944 - đầu 1945 đã làm 2 triệu người chết , 95% dân số thất học
-      (nạn dốt) , và nền tài chính kiệt quệ, kho bạc trống rỗng. Về giặc ngoại xâm, Pháp nổ súng gây hấn ở Sài Gòn ngay
-      ngày 2/9/1945 và bắt đầu cuộc xâm lược lần thứ hai vào ngày 23/9/1945 với sự bảo trợ của quân Anh. Ở miền Bắc, hơn
-      20 vạn quân Tưởng Giới Thạch kéo vào từ vĩ tuyến 16 trở ra dưới danh nghĩa giải giáp quân Nhật, mang theo các lực
-      lượng tay sai như Việt Quốc, Việt Cách , trong khi 6 vạn quân Nhật vẫn chưa được giải giáp.</p>
-    <p>Bạn có thể thêm bao nhiêu đoạn văn tùy thích...</p>
-  </div>
-
-  <div class="content-section">
-    <h2>Chương 2: Đảng lãnh đạo hai cuộc kháng chiến, hoàn thành giải phóng dân tộc, thống nhất đất nước (1945 - 1975)
-    </h2>
-    <p>Nội dung văn bản tiếp theo, tập trung vào tư tưởng Hồ Chí Minh về phòng chống tham nhũng, hoặc về đường lối kháng
-      chiến...</p>
-  </div>
-
-  <div class="content-section">
-    <img
-      src="https://firebasestorage.googleapis.com/v0/b/imageuploadv3.appspot.com/o/myimages%2FScreenshot%202025-10-31%20054119.png?alt=media&token=026f0e1c-607f-41d8-95da-61c9ac1c21d8"
-      alt="Ảnh minh họa 2" style="width: 100%; border-radius: 8px;">
-  </div>
-
-  <div class="content-section">
-    <h2>Phần 6: Một số hình ảnh tư liệu</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-      <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6a" alt="Tư liệu 1"
-        style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6b" alt="Tư liệu 2"
-        style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6c" alt="Tư liệu 3"
-        style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <!-- === PHẦN 3: VĂN NÓI === -->
+    <div>
+      <h2>Phần 3: Nội dung văn bản</h2>
+      <p class="align-justify">Đây là nơi bạn viết nội dung văn bản đầu tiên. Bạn có thể giải thích về bối cảnh lịch sử, lý do của cuộc kháng chiến, v.v. Văn bản này sẽ nằm ngay dưới game. Đoạn văn này được căn lề đều (justify) nhờ class 'align-justify'.</p>
+      <p>Đoạn văn này không có class 'align-justify' nên nó sẽ được căn lề trái (mặc định của .entry p).</p>
     </div>
-  </div>
 
-  <div class="content-section">
-    <h2>Phần 7: Kết luận</h2>
-    <p>Nội dung văn bản kết luận. Cảm ơn vì đã xem và trải nghiệm dự án.</p>
-  </div>
+    <!-- === PHẦN 4: ẢNH THỨ HAI === -->
+    <div>
+      <img src="https://placehold.co/960x500/b91c1c/white?text=Ảnh+Minh+Họa+Phần+4" alt="Ảnh minh họa 2">
+    </div>
+
+    <!-- === PHẦN 5: VĂN NÓI === -->
+    <div>
+      <h2>Phần 5: Nội dung văn bản tiếp theo</h2>
+      <p class="align-justify">Nội dung văn bản tiếp theo, tập trung vào tư tưởng Hồ Chí Minh về phòng chống tham nhũng, hoặc về đường lối kháng chiến...</p>
+    </div>
+
+    <!-- === PHẦN 6: NHIỀU ẢNH === -->
+    <div>
+      <h2>Phần 6: Một số hình ảnh tư liệu</h2>
+      <!-- Dùng CSS Grid đơn giản để chia cột -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; max-width: 100%; margin: 1em 0;">
+        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6a" alt="Tư liệu 1" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6b" alt="Tư liệu 2" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <img src="https://placehold.co/400x300/991b1b/white?text=Ảnh+6c" alt="Tư liệu 3" style="width: 100%; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+
+    <!-- === PHẦN 7: VĂN NÓI (KẾT) === -->
+    <div>
+      <h2>Phần 7: Kết luận</h2>
+      <p class="align-justify">Nội dung văn bản kết luận. Cảm ơn vì đã xem và trải nghiệm dự án.</p>
+    </div>
+
+  </div> <!-- Kết thúc <div class="entry"> -->
 
 
+  <!-- === (3) SCRIPT GAME UNITY (GIỮ NGUYÊN) === -->
   <script>
     var canvas = document.querySelector("#unity-canvas");
     function unityShowBanner(msg, type) {
@@ -175,10 +187,10 @@
       if (type == 'error') div.style = 'background: red; padding: 10px;';
       else {
         if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-        setTimeout(function () {
+        setTimeout(function() {
           if (div.parentNode === warningBanner) {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
+             warningBanner.removeChild(div);
+             updateBannerVisibility();
           }
         }, 5000);
       }
@@ -227,21 +239,23 @@
     document.body.appendChild(script);
   </script>
 
+  <!-- === (4) NƠI CHATBOX SẼ "GẮN" VÀO (GIỮ NGUYÊN) === -->
   <div id="chatbox-root"></div>
 
+  <!-- === (5) SCRIPT CHATBOX AI (GIỮ NGUYÊN BẢN SỬA LỖI INPUT CUỐI CÙNG) === -->
   <script type="text/babel">
-
+    
     const { useState, useEffect, useRef, forwardRef } = React;
-
+    
     const cn = (...classes) => classes.filter(Boolean).join(' ');
 
-    const MessageCircle = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" /></svg>);
-    const X = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12" /></svg>);
-    const Send = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z" /><path d="m22 2-11 11" /></svg>);
-    const Bot = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></svg>);
-    const User = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>);
-    const Minimize2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" /></svg>);
-    const Trash2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18" /><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" /><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" /><line x1="10" x2="10" y1="11" y2="17" /><line x1="14" x2="14" y1="11" y2="17" /></svg>);
+    const MessageCircle = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>);
+    const X = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>);
+    const Send = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="m22 2-11 11"/></svg>);
+    const Bot = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>);
+    const User = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>);
+    const Minimize2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7"/></svg>);
+    const Trash2 = () => (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>);
 
     const Button = forwardRef(({ className, variant = 'default', size = 'default', ...props }, ref) => {
       const base = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none";
@@ -426,7 +440,7 @@
                             if (canvas) canvas.blur();
                           }}
                           onKeyDown={(e) => {
-                            e.stopPropagation();
+                            e.stopPropagation(); 
                             if (e.key === 'Enter') {
                               e.preventDefault();
                               handleSendMessage();
@@ -450,7 +464,7 @@
         </React.Fragment>
       );
     }
-
+    
     // --- KHỞI ĐỘNG REACT ---
     const domNode = document.getElementById('chatbox-root');
     const root = ReactDOM.createRoot(domNode);
@@ -459,5 +473,4 @@
   </script>
 
 </body>
-
 </html>
