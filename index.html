@@ -527,7 +527,7 @@
       const [isTyping, setIsTyping] = useState(false);
       const sendMessage = async (message) => {
         setIsTyping(true);
-        const API_URL = "https://seo-flask-api.azurewebsites.net/ask_gemini_hcm";
+        const API_URL = "https://seo-flask-api.azurewebsites.net/ask_gemini_vnr";
         try {
           const response = await fetch(API_URL, {
             method: "POST",
